@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -15,7 +16,8 @@ export const Services: React.FC = () => {
       tags: ["Certified Products", "Cold Chain", "Batch Tracking"],
       color: "text-blue-400",
       bg: "bg-blue-500/10",
-      border: "hover:border-blue-500/50"
+      border: "hover:border-blue-500/50",
+      progress: 96
     },
     {
       id: 'medicines', // Was compliance/medicines
@@ -25,7 +27,8 @@ export const Services: React.FC = () => {
       tags: ["Full Catalog", "Quality Assured", "Competitive Pricing"],
       color: "text-indigo-400",
       bg: "bg-indigo-500/10",
-      border: "hover:border-indigo-500/50"
+      border: "hover:border-indigo-500/50",
+      progress: 94
     },
     {
       id: 'lab',
@@ -35,7 +38,8 @@ export const Services: React.FC = () => {
       tags: ["Latest Technology", "Installation Support", "Training"],
       color: "text-cyan-400",
       bg: "bg-cyan-500/10",
-      border: "hover:border-cyan-500/50"
+      border: "hover:border-cyan-500/50",
+      progress: 88
     },
     {
       id: 'gear', // Was equipment
@@ -45,7 +49,8 @@ export const Services: React.FC = () => {
       tags: ["Surgical Supplies", "Diagnostic Tools", "PPE"],
       color: "text-teal-400",
       bg: "bg-teal-500/10",
-      border: "hover:border-teal-500/50"
+      border: "hover:border-teal-500/50",
+      progress: 92
     }
   ];
 
@@ -103,9 +108,22 @@ export const Services: React.FC = () => {
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-slate-400 mb-8 leading-relaxed h-16">
+              <p className="text-slate-400 mb-6 leading-relaxed h-16">
                 {service.desc}
               </p>
+
+              {/* Decorative Progress Bar */}
+              <div className="w-full h-1.5 bg-slate-800/80 rounded-full mb-8 overflow-hidden relative">
+                 <motion.div 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${service.progress}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, delay: 0.4 + (index * 0.1), ease: "circOut" }}
+                    className={`h-full rounded-full ${service.color.replace('text-', 'bg-')} relative shadow-[0_0_10px_rgba(59,130,246,0.5)]`}
+                 >
+                     <div className="absolute top-0 right-0 bottom-0 w-1 bg-white/50 blur-[1px]" />
+                 </motion.div>
+              </div>
               
               <div className="flex flex-wrap gap-2 mb-8">
                 {service.tags.map((tag, i) => (
