@@ -5,7 +5,22 @@ import { useLanguage } from '../context/LanguageContext';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 
 export const Contact: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const labels = {
+    en: {
+      address: "Address",
+      phone: "Phone",
+      email: "Email"
+    },
+    am: {
+      address: "አድራሻ",
+      phone: "ስልክ",
+      email: "ኢሜይል"
+    }
+  };
+
+  const currentLabels = labels[language];
 
   return (
     <section id="contact" className="py-24 bg-white dark:bg-slate-950 relative overflow-hidden">
@@ -30,9 +45,9 @@ export const Contact: React.FC = () => {
             className="space-y-6"
           >
             {[
-              { icon: <MapPin />, title: t.contact.info.address, value: "Chagini Town, behind Dr. Mulugeta Specialist Clinic" },
-              { icon: <Phone />, title: t.contact.info.phone, value: "+251 918 292 575" },
-              { icon: <Mail />, title: t.contact.info.email, value: "mamesmart@gmail.com" }
+              { icon: <MapPin />, title: currentLabels.address, value: t.contact.info.address },
+              { icon: <Phone />, title: currentLabels.phone, value: t.contact.info.phone },
+              { icon: <Mail />, title: currentLabels.email, value: t.contact.info.email }
             ].map((item, idx) => (
               <motion.div
                 key={idx}

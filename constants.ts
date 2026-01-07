@@ -101,7 +101,7 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
         submit: "Send Message",
       },
       info: {
-        address: "Chagini Town, behind Dr. Mulugeta Specialist Clinic",
+        address: "Chagini Town, behind Dr. Mulugeta Specialist Clinic, Awi Zone, Amhara region, Ethiopia",
         phone: "+251 918 292 575 / +251 919 796 363",
         email: "mamesmart@gmail.com",
       },
