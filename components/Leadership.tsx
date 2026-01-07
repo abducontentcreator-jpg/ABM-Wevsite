@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -15,14 +16,14 @@ export const Leadership: React.FC = () => {
             whileInView={{ opacity: 1 }}
             className="inline-block px-4 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 text-xs font-bold tracking-widest uppercase mb-4"
           >
-            Our Team
+            {t.common.ourTeam}
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Meet Our <span className="text-medical-500">Leadership</span>
+            {t.leadership.title}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}

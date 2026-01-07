@@ -13,7 +13,7 @@ export const Services: React.FC = () => {
       icon: <Pill size={28} />,
       title: t.services.items.pharma.title,
       desc: t.services.items.pharma.desc,
-      tags: ["Certified Products", "Cold Chain", "Batch Tracking"],
+      tags: t.services.items.pharma.tags,
       color: "text-blue-400",
       bg: "bg-blue-500/10",
       border: "hover:border-blue-500/50",
@@ -24,7 +24,7 @@ export const Services: React.FC = () => {
       icon: <HeartPulse size={28} />,
       title: t.services.items.compliance.title,
       desc: t.services.items.compliance.desc,
-      tags: ["Full Catalog", "Quality Assured", "Competitive Pricing"],
+      tags: t.services.items.compliance.tags,
       color: "text-indigo-400",
       bg: "bg-indigo-500/10",
       border: "hover:border-indigo-500/50",
@@ -35,7 +35,7 @@ export const Services: React.FC = () => {
       icon: <Microscope size={28} />,
       title: t.services.items.lab.title,
       desc: t.services.items.lab.desc,
-      tags: ["Latest Technology", "Installation Support", "Training"],
+      tags: t.services.items.lab.tags,
       color: "text-cyan-400",
       bg: "bg-cyan-500/10",
       border: "hover:border-cyan-500/50",
@@ -46,7 +46,7 @@ export const Services: React.FC = () => {
       icon: <Stethoscope size={28} />,
       title: t.services.items.equipment.title,
       desc: t.services.items.equipment.desc,
-      tags: ["Surgical Supplies", "Diagnostic Tools", "PPE"],
+      tags: t.services.items.equipment.tags,
       color: "text-teal-400",
       bg: "bg-teal-500/10",
       border: "hover:border-teal-500/50",
@@ -67,7 +67,7 @@ export const Services: React.FC = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-1 rounded-full bg-slate-900 border border-slate-700 text-blue-400 text-xs font-bold tracking-widest uppercase mb-4"
           >
-            What We Offer
+            {t.common.whatWeOffer}
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-2 text-sm font-bold text-medical-500 cursor-pointer group-hover:text-medical-400">
-                <span>Learn More</span>
+                <span>{t.common.learnMore}</span>
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </div>
             </motion.div>

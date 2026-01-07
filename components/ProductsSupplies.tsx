@@ -94,7 +94,7 @@ export const ProductsSupplies: React.FC = () => {
                 transition={{ delay: 0.5 }}
                 className="px-6 py-2 rounded-full bg-medical-50 dark:bg-medical-900/30 text-medical-600 dark:text-medical-400 text-sm font-medium border border-medical-200 dark:border-medical-800"
             >
-                High Quality • Certified • Reliable
+                {t.productsSupplies.badge}
             </motion.div>
         </div>
       </div>

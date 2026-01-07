@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, Variants } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -151,14 +152,11 @@ export const Hero: React.FC = () => {
         >
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-700 text-slate-300 text-sm font-medium mb-8 backdrop-blur-md hover:border-medical-500/50 transition-colors">
             <ShieldCheck size={16} className="text-medical-500" />
-            <span>Trusted Pharmaceutical Partner</span>
+            <span>{t.common.trustedPartner}</span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-extrabold leading-tight text-white mb-6 tracking-tight drop-shadow-2xl">
-            Trustworthy <br />
-            Pharmaceuticals and <br />
-            Medical Supplies <br />
-            Source
+            {t.hero.title}
           </motion.h1>
           
           <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed border-l-4 border-medical-500 pl-6 bg-gradient-to-r from-slate-900/50 to-transparent">
@@ -188,9 +186,9 @@ export const Hero: React.FC = () => {
           {/* Stats */}
           <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 border-t border-slate-800/50 pt-8 backdrop-blur-sm rounded-xl p-4 bg-slate-900/20">
             {[
-                { val: "500+", label: "Products" },
-                { val: "100+", label: "Partners" },
-                { val: "10+", label: "Years" }
+                { val: "500+", label: t.hero.stats.products },
+                { val: "100+", label: t.hero.stats.partners },
+                { val: "10+", label: t.hero.stats.years }
             ].map((stat, idx) => (
                 <div key={idx}>
                     <h4 className="text-3xl font-bold text-white mb-1">{stat.val}</h4>
@@ -233,7 +231,7 @@ export const Hero: React.FC = () => {
             <div className="w-12 h-12 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
                 <Truck size={24} />
             </div>
-            <h3 className="text-white font-bold text-lg">Fast Delivery</h3>
+            <h3 className="text-white font-bold text-lg">{t.hero.cards.fastDelivery}</h3>
             {/* Dashed Connector */}
             <svg className="absolute top-1/2 right-[-50px] w-[50px] h-[2px] overflow-visible">
                 <line x1="0" y1="0" x2="50" y2="0" stroke="rgba(255,255,255,0.2)" strokeDasharray="4 4" />
@@ -251,10 +249,10 @@ export const Hero: React.FC = () => {
             <div className="w-12 h-12 rounded-lg bg-medical-500/20 flex items-center justify-center text-medical-400 mb-4 group-hover:scale-110 transition-transform">
                 <Box size={24} />
             </div>
-            <h3 className="text-white font-bold text-lg">Quality Products</h3>
+            <h3 className="text-white font-bold text-lg">{t.hero.cards.qualityProducts}</h3>
             <div className="flex gap-2 mt-3">
                 <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
-                <span className="text-xs text-green-500 font-medium">In Stock</span>
+                <span className="text-xs text-green-500 font-medium">{t.hero.cards.inStock}</span>
             </div>
           </motion.div>
 
@@ -270,7 +268,7 @@ export const Hero: React.FC = () => {
                     <ShieldCheck size={20} />
                 </div>
                 <div>
-                    <h3 className="text-white font-bold">Certified</h3>
+                    <h3 className="text-white font-bold">{t.hero.cards.certified}</h3>
                     <p className="text-xs text-slate-400">ISO 9001:2015</p>
                 </div>
              </div>
@@ -288,8 +286,8 @@ export const Hero: React.FC = () => {
                     <CheckCircle size={20} />
                 </div>
                 <div>
-                    <h3 className="text-white font-bold">Reliable Supply</h3>
-                    <p className="text-xs text-slate-400">99.9% Uptime</p>
+                    <h3 className="text-white font-bold">{t.hero.cards.reliable}</h3>
+                    <p className="text-xs text-slate-400">{t.hero.cards.uptime}</p>
                 </div>
              </div>
           </motion.div>
