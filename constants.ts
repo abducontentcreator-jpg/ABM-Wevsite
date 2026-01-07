@@ -111,6 +111,33 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
         title: "Our Vision",
         subtitle: "To be the most trusted pharmaceutical partner."
       },
+      overview: {
+        title: "Company Overview",
+        content: [
+          "ABM Wholesale of Medicines and Equipment is a professional pharmaceutical wholesaler engaged in the distribution of medicines and medical equipment to licensed healthcare institutions. The company operates with a strong focus on reliability, quality assurance, and compliance with pharmaceutical standards.",
+          "ABM plays an important role in the healthcare supply chain by connecting manufacturers and suppliers with pharmacies, hospitals, and healthcare facilities."
+        ]
+      },
+      activities: {
+        title: "Core Activities",
+        items: [
+          "Pharmaceutical wholesale distribution",
+          "Supply of all kinds of medicines",
+          "Distribution of laboratory equipment and reagents",
+          "Supply of general medical equipment and medical supplies"
+        ],
+        note: "The company supplies products strictly to professional and licensed healthcare institutions."
+      },
+      values: {
+        title: "Values & Commitment",
+        items: [
+          "Responsible pharmaceutical distribution",
+          "Quality and safety in medicine handling",
+          "Ethical and professional business practices",
+          "Reliable supply to healthcare institutions",
+          "Compliance with applicable pharmaceutical regulations"
+        ]
+      },
       process: {
         manufacturers: { title: "Manufacturers", sub: "Quality sources" },
         distribution: { title: "ABM Distribution", sub: "Our warehouses" },
@@ -257,6 +284,33 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
       vision: {
         title: "ራዕያችን",
         subtitle: "በምስራቅ አፍሪካ እምነት የሚጣልበት የመድሃኒት አጋር መሆን።"
+      },
+      overview: {
+        title: "የኩባንያው አጠቃላይ እይታ",
+        content: [
+          "ኤቢኤም የመድሃኒት እና የህክምና መሳሪያዎች ጅምላ ንግድ፣ ፈቃድ ላላቸው የጤና ተቋማት መድሃኒቶችን እና የህክምና መሳሪያዎችን የሚያከፋፍል ፕሮፌሽናል ድርጅት ነው። ድርጅቱ በአስተማማኝነት፣ በጥራት ማረጋገጫ እና የመድሃኒት ደረጃዎችን በማክበር ላይ ከፍተኛ ትኩረት ይሰጣል።",
+          "ኤቢኤም አምራቾችን እና አቅራቢዎችን ከፋርማሲዎች፣ ሆስፒታሎች እና የጤና ተቋማት ጋር በማገናኘት በጤናው ዘርፍ የአቅርቦት ሰንሰለት ውስጥ ትልቅ ሚና ይጫወታል።"
+        ]
+      },
+      activities: {
+        title: "ዋና ተግባራት",
+        items: [
+          "የመድሃኒት ጅምላ ስርጭት",
+          "የሁሉም አይነት መድሃኒቶች አቅርቦት",
+          "የላቦራቶሪ እቃዎች እና ሪኤጀንቶች ስርጭት",
+          "አጠቃላይ የህክምና መሳሪያዎች እና አቅርቦቶች"
+        ],
+        note: "ኩባንያው ምርቶችን የሚያቀርበው ለባለሙያዎች እና ፈቃድ ለላቸው የጤና ተቋማት ብቻ ነው።"
+      },
+      values: {
+        title: "እሴቶች እና ቁርጠኝነት",
+        items: [
+          "ኃላፊነት የሚሰማው የመድሃኒት ስርጭት",
+          "በመድሃኒት አያያዝ ጥራት እና ደህንነት",
+          "ሥነ-ምግባራዊ እና ሙያዊ የንግድ አሰራር",
+          "ለጤና ተቋማት አስተማማኝ አቅርቦት",
+          "ተፈጻሚነት ያላቸውን የመድሃኒት ደንቦች ማክበር"
+        ]
       },
       process: {
         manufacturers: { title: "አምራቾች", sub: "ጥራት ያላቸው ምንጮች" },

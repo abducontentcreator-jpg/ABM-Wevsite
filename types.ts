@@ -81,6 +81,19 @@ export interface Translations {
       title: string;
       subtitle: string;
     };
+    overview: {
+      title: string;
+      content: string[];
+    };
+    activities: {
+      title: string;
+      items: string[];
+      note: string;
+    };
+    values: {
+      title: string;
+      items: string[];
+    };
     process: {
       manufacturers: { title: string; sub: string };
       distribution: { title: string; sub: string };
