@@ -2,6 +2,8 @@ import React from 'react';
 import { Hero } from '../components/Hero';
 import { Services } from '../components/Services';
 import { Leadership } from '../components/Leadership';
+import { TargetCustomers } from '../components/TargetCustomers';
+import { ProductsSupplies } from '../components/ProductsSupplies';
 import { About } from './About';
 import { Contact } from './Contact';
 import { motion } from 'framer-motion';
@@ -17,6 +19,8 @@ export const Home: React.FC = () => {
       <Hero />
       <About />
       <Services />
+      <ProductsSupplies />
+      <TargetCustomers />
       <Leadership />
       <Contact />
     </motion.div>

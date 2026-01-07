@@ -1,3 +1,4 @@
+
 import { Translations } from './types';
 
 export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
@@ -36,6 +37,28 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
         },
       },
     },
+    productsSupplies: {
+      title: "Products & Supplies",
+      subtitle: "We offer a wide range of certified medical products:",
+      items: [
+        { name: "All types of medicines", icon: "Pill" },
+        { name: "Pharmaceutical products", icon: "FlaskConical" },
+        { name: "Laboratory equipment", icon: "Microscope" },
+        { name: "Laboratory reagents", icon: "TestTube" },
+        { name: "General medical equipment and supplies", icon: "BriefcaseMedical" }
+      ]
+    },
+    targetCustomers: {
+      title: "Our Target Customers",
+      subtitle: "ABM serves the following institutions:",
+      items: [
+        { name: "Pharmacies", icon: "Store" },
+        { name: "Hospitals", icon: "Building2" },
+        { name: "Health Centers", icon: "HeartPulse" },
+        { name: "Drug Stores", icon: "ShoppingBag" },
+        { name: "Clinics & Healthcare Facilities", icon: "Stethoscope" }
+      ]
+    },
     leadership: {
       title: "Meet Our Leadership",
       subtitle: "Experienced professionals dedicated to excellence in pharmaceutical distribution.",
@@ -43,12 +66,12 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
         {
           name: "Muhammed Hassen Muhammed",
           role: "Chief Executive Officer",
-          desc: "Visionary leader with extensive experience in pharmaceutical distribution and healthcare logistics.",
+          desc: "10+ years of experience in the pharmaceutical field. Provides overall company leadership, technical supervision, and operational oversight.",
         },
         {
           name: "Fikir Addis Tsahay",
           role: "Store Manager",
-          desc: "Expert in inventory management and supply chain optimization, ensuring seamless operations.",
+          desc: "3+ years of experience in pharmaceutical handling and store management. Responsible for medicine storage, inventory management, and proper handling of pharmaceutical products.",
         },
       ],
     },
@@ -72,6 +95,7 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
       subtitle: "We supply strictly to professional and licensed healthcare institutions.",
       form: {
         name: "Full Name",
+        phone: "Phone Number",
         email: "Email Address",
         message: "Message",
         submit: "Send Message",
@@ -122,6 +146,28 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
         },
       },
     },
+    productsSupplies: {
+      title: "ምርቶች እና አቅርቦቶች",
+      subtitle: "የተለያዩ የተረጋገጡ የህክምና ምርቶችን እናቀርባለን፡",
+      items: [
+        { name: "ሁሉም ዓይነት መድሃኒቶች", icon: "Pill" },
+        { name: "የፋርማሲዩቲካል ምርቶች", icon: "FlaskConical" },
+        { name: "የላቦራቶሪ ዕቃዎች", icon: "Microscope" },
+        { name: "የላቦራቶሪ ሪኤጀንቶች", icon: "TestTube" },
+        { name: "አጠቃላይ የህክምና መሳሪያዎች እና አቅርቦቶች", icon: "BriefcaseMedical" }
+      ]
+    },
+    targetCustomers: {
+      title: "የእኛ ደንበኞች",
+      subtitle: "ኤቢኤም ለሚከተሉት ተቋማት አገልግሎት ይሰጣል፡",
+      items: [
+        { name: "ፋርማሲዎች", icon: "Store" },
+        { name: "ሆስፒታሎች", icon: "Building2" },
+        { name: "ጤና ጣቢያዎች", icon: "HeartPulse" },
+        { name: "መድሃኒት መደብሮች", icon: "ShoppingBag" },
+        { name: "ክሊኒኮች እና ሌሎች የጤና ተቋማት", icon: "Stethoscope" }
+      ]
+    },
     leadership: {
       title: "የሥራ አመራር",
       subtitle: "በዘርፉ ልምድ ባላቸው እና ለላቀ አገልግሎት በቆሙ ባለሙያዎች የሚመራ።",
@@ -158,6 +204,7 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
       subtitle: "ምርቶቻችንን የምናቀርበው ለባለሙያዎች እና ፈቃድ ለላቸው የጤና ተቋማት ብቻ ነው።",
       form: {
         name: "ሙሉ ስም",
+        phone: "ስልክ ቁጥር",
         email: "ኢሜይል",
         message: "መልዕክትዎ",
         submit: "መልዕክት ይላኩ",

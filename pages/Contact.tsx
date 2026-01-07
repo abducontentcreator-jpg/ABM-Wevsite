@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -63,6 +64,13 @@ export const Contact: React.FC = () => {
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t.contact.form.name}</label>
                 <input
                   type="text"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-medical-500 outline-none transition-all dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t.contact.form.phone}</label>
+                <input
+                  type="tel"
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-medical-500 outline-none transition-all dark:text-white"
                 />
               </div>

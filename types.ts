@@ -1,3 +1,4 @@
+
 export type Language = 'en' | 'am';
 
 export interface Translations {
@@ -23,6 +24,22 @@ export interface Translations {
       compliance: { title: string; desc: string };
     };
   };
+  productsSupplies: {
+    title: string;
+    subtitle: string;
+    items: Array<{
+      name: string;
+      icon: string;
+    }>;
+  };
+  targetCustomers: {
+    title: string;
+    subtitle: string;
+    items: Array<{
+      name: string;
+      icon: string;
+    }>;
+  };
   leadership: {
     title: string;
     subtitle: string;
@@ -43,6 +60,7 @@ export interface Translations {
     subtitle: string;
     form: {
       name: string;
+      phone: string;
       email: string;
       message: string;
       submit: string;
