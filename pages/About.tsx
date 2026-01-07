@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -50,14 +51,14 @@ export const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-4xl md:text-5xl font-bold text-white mb-6"
             >
-                The <span className="text-medical-500">Trusted Link</span> in Healthcare Supply
+                The <span className="text-medical-500">Trusted Link</span> in the Healthcare Supply
             </motion.h2>
             <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 className="text-slate-400 max-w-2xl mx-auto text-lg"
             >
-                ABM Wholesale bridges the gap between pharmaceutical manufacturers and healthcare providers, ensuring reliable access to quality medical supplies.
+                ABM Wholesale operates between the manufacturers of pharmaceuticals and the providers of health care, ensuring the availability of quality health care materials.
             </motion.p>
         </div>
 

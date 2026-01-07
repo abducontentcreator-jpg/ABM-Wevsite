@@ -155,10 +155,10 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-extrabold leading-tight text-white mb-6 tracking-tight drop-shadow-2xl">
-            Reliable <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-medical-400 via-blue-400 to-indigo-400 animate-gradient-x">Pharmaceutical</span> and <br />
-            Medical Supply <br />
-            Partner
+            Trustworthy <br />
+            Pharmaceuticals and <br />
+            Medical Supplies <br />
+            Source
           </motion.h1>
           
           <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed border-l-4 border-medical-500 pl-6 bg-gradient-to-r from-slate-900/50 to-transparent">

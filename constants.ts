@@ -11,9 +11,9 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
       contact: "Contact",
     },
     hero: {
-      title: "Reliable Pharmaceutical and Medical Supply Partner",
+      title: "Trustworthy Pharmaceuticals and Medical Supplies Source",
       subtitle: "ABM Wholesale delivers quality medicines, lab equipment, and medical gear to pharmacies, hospitals, and clinics across Ethiopia with excellence and reliability.",
-      cta: "Get in Touch",
+      cta: "Contact Us",
     },
     services: {
       title: "Comprehensive Medical Supply Solutions",
@@ -76,7 +76,7 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
       ],
     },
     about: {
-      title: "The Trusted Link in Healthcare Supply",
+      title: "The Trusted Link in the Healthcare Supply",
       mission: {
         title: "Manufacturers",
         desc: "Quality sources",
@@ -91,8 +91,8 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
       },
     },
     contact: {
-      title: "Get in Touch",
-      subtitle: "We supply strictly to professional and licensed healthcare institutions.",
+      title: "Contact Us",
+      subtitle: "We are suppliers to professional healthcare organizations only.",
       form: {
         name: "Full Name",
         phone: "Phone Number",
