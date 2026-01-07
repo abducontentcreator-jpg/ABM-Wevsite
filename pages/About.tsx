@@ -80,13 +80,33 @@ export const About: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.2 }}
-                        className="flex flex-col items-center text-center"
+                        className="flex flex-col items-center text-center group cursor-default"
                     >
-                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-xl border-2 transition-all duration-300 ${step.active ? 'bg-medical-500 border-medical-400 text-white scale-110 shadow-medical-500/50' : 'bg-slate-950 border-slate-800 text-slate-400'}`}>
-                            {step.icon}
-                        </div>
-                        <h3 className={`text-lg font-bold mb-1 ${step.active ? 'text-white' : 'text-slate-300'}`}>{step.title}</h3>
-                        <p className="text-sm text-slate-500">{step.sub}</p>
+                        <motion.div 
+                            whileHover={{ scale: 1.15, rotate: [0, -5, 5, 0] }}
+                            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                            className={`relative w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-xl border-2 transition-all duration-500 overflow-hidden
+                            ${step.active 
+                                ? 'bg-medical-500 border-medical-400 text-white scale-110 shadow-medical-500/50' 
+                                : 'bg-slate-950 border-slate-800 text-slate-400 group-hover:border-medical-500/50 group-hover:shadow-medical-500/30'}`}
+                        >
+                            {/* Dynamic Background Overlay for non-active items */}
+                            {!step.active && (
+                                <div className="absolute inset-0 bg-gradient-to-br from-medical-600 to-medical-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
+                            )}
+                            
+                             {/* Active Pulse/Shine */}
+                             {step.active && (
+                                <div className="absolute inset-0 bg-white/10 animate-pulse" />
+                            )}
+
+                            {/* Icon */}
+                            <div className={`relative z-10 transition-colors duration-300 ${!step.active ? 'group-hover:text-white' : ''}`}>
+                                {step.icon}
+                            </div>
+                        </motion.div>
+                        <h3 className={`text-lg font-bold mb-1 transition-colors duration-300 ${step.active ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{step.title}</h3>
+                        <p className="text-sm text-slate-500 transition-colors duration-300 group-hover:text-slate-400">{step.sub}</p>
                     </motion.div>
                 ))}
             </div>
@@ -100,9 +120,11 @@ export const About: React.FC = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + (idx * 0.2) }}
-                    className="bg-slate-950/50 border border-slate-800 p-8 rounded-2xl hover:border-slate-700 transition-colors"
+                    whileHover={{ y: -5, borderColor: "rgba(59, 130, 246, 0.3)" }}
+                    className="bg-slate-950/50 border border-slate-800 p-8 rounded-2xl transition-colors duration-300"
                 >
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                       <span className="p-2 rounded-lg bg-medical-500/10 text-medical-500">{feature.icon}</span>
                        {feature.title}
                     </h3>
                     <p className="text-slate-400 leading-relaxed text-sm">

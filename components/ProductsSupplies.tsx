@@ -72,9 +72,9 @@ export const ProductsSupplies: React.FC = () => {
               className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:shadow-medical-500/20 transition-all duration-300 group"
             >
               <motion.div 
-                whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+                whileHover={{ scale: 1.1, rotate: [0, -10, 10, 0] }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="w-14 h-14 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-medical-600 dark:text-medical-400 mb-4 group-hover:bg-medical-500 group-hover:text-white transition-colors duration-300"
+                className="w-16 h-16 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-medical-600 dark:text-medical-400 mb-5 group-hover:bg-gradient-to-br group-hover:from-medical-500 group-hover:to-medical-600 group-hover:text-white group-hover:shadow-medical-500/50 group-hover:shadow-2xl group-hover:ring-4 group-hover:ring-medical-500/20 transition-all duration-500 ease-out"
               >
                 {iconMap[item.icon]}
               </motion.div>
