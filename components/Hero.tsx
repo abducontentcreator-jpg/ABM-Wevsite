@@ -26,7 +26,7 @@ const NodeConnection = () => (
     <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20 z-0" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <circle cx="1" cy="1" r="1" fill="rgba(148, 163, 184, 0.3)" />
+                <circle cx="1" cy="1" r="1" className="fill-slate-400 dark:fill-slate-600" />
             </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />
@@ -34,7 +34,7 @@ const NodeConnection = () => (
         <motion.path 
             d="M100,100 Q400,200 600,100 T1000,150"
             fill="none" 
-            stroke="rgba(59, 130, 246, 0.3)" 
+            stroke="rgba(59, 130, 246, 0.4)" 
             strokeWidth="1"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
@@ -43,7 +43,7 @@ const NodeConnection = () => (
          <motion.path 
             d="M-100,400 Q200,300 500,500 T1200,400"
             fill="none" 
-            stroke="rgba(99, 102, 241, 0.2)" 
+            stroke="rgba(99, 102, 241, 0.3)" 
             strokeWidth="1"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
@@ -106,15 +106,15 @@ export const Hero: React.FC = () => {
         id="home" 
         ref={ref}
         onMouseMove={handleMouseMove}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 bg-slate-950 perspective-[2000px]"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 bg-slate-50 dark:bg-slate-950 perspective-[2000px] transition-colors duration-300"
     >
       {/* Dynamic Background Layer (Parallax + Nodes) */}
       <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-10 dark:opacity-20 pointer-events-none" />
           <NodeConnection />
           {/* Ambient Glows */}
-          <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-blue-600/5 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-indigo-600/5 dark:bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
       </motion.div>
 
       {/* Floating Capsules Layer (Mouse Reactive) */}
@@ -150,16 +150,16 @@ export const Hero: React.FC = () => {
           style={{ y: yContent, rotateX: useTransform(rotateX, r => r * 0.2), rotateY: useTransform(rotateY, r => r * 0.2) }}
           className="max-w-3xl transform-gpu preserve-3d"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-700 text-slate-300 text-sm font-medium mb-8 backdrop-blur-md hover:border-medical-500/50 transition-colors">
-            <ShieldCheck size={16} className="text-medical-500" />
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium mb-8 backdrop-blur-md hover:border-medical-500/50 transition-colors shadow-sm">
+            <ShieldCheck size={16} className="text-medical-600 dark:text-medical-500" />
             <span>{t.common.trustedPartner}</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-extrabold leading-tight text-white mb-6 tracking-tight drop-shadow-2xl">
+          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-extrabold leading-tight text-slate-900 dark:text-white mb-6 tracking-tight drop-shadow-sm dark:drop-shadow-2xl">
             {t.hero.title}
           </motion.h1>
           
-          <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed border-l-4 border-medical-500 pl-6 bg-gradient-to-r from-slate-900/50 to-transparent">
+          <motion.p variants={itemVariants} className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed border-l-4 border-medical-500 pl-6 bg-gradient-to-r from-slate-100/80 dark:from-slate-900/50 to-transparent py-2">
             {t.hero.subtitle}
           </motion.p>
 
@@ -174,25 +174,25 @@ export const Hero: React.FC = () => {
             </motion.button>
             
             <motion.button
-              whileHover={{ scale: 1.05, borderColor: "#3b82f6", backgroundColor: "rgba(30, 41, 59, 0.5)" }}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.1)" }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('services')}
-              className="px-8 py-4 bg-transparent border border-slate-700 text-white rounded-xl font-bold text-lg transition-all backdrop-blur-sm"
+              className="px-8 py-4 bg-transparent border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white rounded-xl font-bold text-lg transition-all backdrop-blur-sm"
             >
               {t.nav.services}
             </motion.button>
           </motion.div>
 
           {/* Stats */}
-          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 border-t border-slate-800/50 pt-8 backdrop-blur-sm rounded-xl p-4 bg-slate-900/20">
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 border-t border-slate-200 dark:border-slate-800/50 pt-8 backdrop-blur-sm rounded-xl p-4 bg-white/40 dark:bg-slate-900/20 shadow-sm dark:shadow-none">
             {[
                 { val: "500+", label: t.hero.stats.products },
                 { val: "100+", label: t.hero.stats.partners },
                 { val: "10+", label: t.hero.stats.years }
             ].map((stat, idx) => (
                 <div key={idx}>
-                    <h4 className="text-3xl font-bold text-white mb-1">{stat.val}</h4>
-                    <p className="text-sm text-slate-500 font-medium uppercase tracking-wider">{stat.label}</p>
+                    <h4 className="text-3xl font-bold text-slate-900 dark:text-white mb-1">{stat.val}</h4>
+                    <p className="text-sm text-slate-500 dark:text-slate-500 font-medium uppercase tracking-wider">{stat.label}</p>
                 </div>
             ))}
           </motion.div>
@@ -213,12 +213,12 @@ export const Hero: React.FC = () => {
              animate={{ opacity: 1, rotateY: 0, rotateX: 0 }}
              transition={{ duration: 1 }}
              style={{ translateZ: "0px" }}
-             className="absolute inset-0 border border-slate-700/50 bg-slate-900/40 rounded-3xl backdrop-blur-xl shadow-2xl"
+             className="absolute inset-0 border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-900/40 rounded-3xl backdrop-blur-xl shadow-2xl"
           >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 dark:from-white/5 to-transparent rounded-3xl pointer-events-none" />
               {/* Fake UI Lines */}
-              <div className="absolute top-8 left-8 right-8 h-px bg-slate-700/50" />
-              <div className="absolute top-8 left-20 bottom-8 w-px bg-slate-700/50" />
+              <div className="absolute top-8 left-8 right-8 h-px bg-slate-300/50 dark:bg-slate-700/50" />
+              <div className="absolute top-8 left-20 bottom-8 w-px bg-slate-300/50 dark:bg-slate-700/50" />
           </motion.div>
 
           {/* Floating Card 1: Fast Delivery */}
@@ -226,16 +226,16 @@ export const Hero: React.FC = () => {
             style={{ translateZ: "60px" }}
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[20%] left-[5%] w-64 p-6 rounded-2xl bg-slate-800/90 border border-slate-600/50 backdrop-blur-md shadow-2xl shadow-black/50 group hover:border-medical-500 transition-colors"
+            className="absolute top-[20%] left-[5%] w-64 p-6 rounded-2xl bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-600/50 backdrop-blur-md shadow-2xl shadow-slate-200/50 dark:shadow-black/50 group hover:border-medical-500 transition-colors"
           >
-            <div className="w-12 h-12 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 rounded-lg bg-indigo-500/10 dark:bg-indigo-500/20 flex items-center justify-center text-indigo-500 dark:text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
                 <Truck size={24} />
             </div>
-            <h3 className="text-white font-bold text-lg">{t.hero.cards.fastDelivery}</h3>
+            <h3 className="text-slate-900 dark:text-white font-bold text-lg">{t.hero.cards.fastDelivery}</h3>
             {/* Dashed Connector */}
-            <svg className="absolute top-1/2 right-[-50px] w-[50px] h-[2px] overflow-visible">
-                <line x1="0" y1="0" x2="50" y2="0" stroke="rgba(255,255,255,0.2)" strokeDasharray="4 4" />
-                <circle cx="50" cy="0" r="3" fill="white" />
+            <svg className="absolute top-1/2 right-[-50px] w-[50px] h-[2px] overflow-visible opacity-50">
+                <line x1="0" y1="0" x2="50" y2="0" stroke="currentColor" className="text-slate-400" strokeDasharray="4 4" />
+                <circle cx="50" cy="0" r="3" fill="currentColor" className="text-slate-400" />
             </svg>
           </motion.div>
 
@@ -244,15 +244,15 @@ export const Hero: React.FC = () => {
             style={{ translateZ: "80px" }}
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 5, delay: 1, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[35%] right-[-5%] w-64 p-6 rounded-2xl bg-slate-800/90 border border-slate-600/50 backdrop-blur-md shadow-2xl shadow-black/50 group hover:border-medical-500 transition-colors"
+            className="absolute top-[35%] right-[-5%] w-64 p-6 rounded-2xl bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-600/50 backdrop-blur-md shadow-2xl shadow-slate-200/50 dark:shadow-black/50 group hover:border-medical-500 transition-colors"
           >
-            <div className="w-12 h-12 rounded-lg bg-medical-500/20 flex items-center justify-center text-medical-400 mb-4 group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 rounded-lg bg-medical-500/10 dark:bg-medical-500/20 flex items-center justify-center text-medical-600 dark:text-medical-400 mb-4 group-hover:scale-110 transition-transform">
                 <Box size={24} />
             </div>
-            <h3 className="text-white font-bold text-lg">{t.hero.cards.qualityProducts}</h3>
+            <h3 className="text-slate-900 dark:text-white font-bold text-lg">{t.hero.cards.qualityProducts}</h3>
             <div className="flex gap-2 mt-3">
                 <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
-                <span className="text-xs text-green-500 font-medium">{t.hero.cards.inStock}</span>
+                <span className="text-xs text-green-600 dark:text-green-500 font-medium">{t.hero.cards.inStock}</span>
             </div>
           </motion.div>
 
@@ -261,15 +261,15 @@ export const Hero: React.FC = () => {
             style={{ translateZ: "40px" }}
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-[20%] left-[15%] w-56 p-5 rounded-2xl bg-slate-800/90 border border-slate-600/50 backdrop-blur-md shadow-2xl shadow-black/50 group hover:border-medical-500 transition-colors"
+            className="absolute bottom-[20%] left-[15%] w-56 p-5 rounded-2xl bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-600/50 backdrop-blur-md shadow-2xl shadow-slate-200/50 dark:shadow-black/50 group hover:border-medical-500 transition-colors"
           >
              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">
+                <div className="w-10 h-10 rounded-full bg-teal-500/10 dark:bg-teal-500/20 flex items-center justify-center text-teal-600 dark:text-teal-400">
                     <ShieldCheck size={20} />
                 </div>
                 <div>
-                    <h3 className="text-white font-bold">{t.hero.cards.certified}</h3>
-                    <p className="text-xs text-slate-400">ISO 9001:2015</p>
+                    <h3 className="text-slate-900 dark:text-white font-bold">{t.hero.cards.certified}</h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">ISO 9001:2015</p>
                 </div>
              </div>
           </motion.div>
@@ -279,15 +279,15 @@ export const Hero: React.FC = () => {
             style={{ translateZ: "50px" }}
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 5, delay: 0.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-[10%] right-[10%] w-60 p-5 rounded-2xl bg-slate-800/90 border border-slate-600/50 backdrop-blur-md shadow-2xl shadow-black/50 group hover:border-medical-500 transition-colors"
+            className="absolute bottom-[10%] right-[10%] w-60 p-5 rounded-2xl bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-600/50 backdrop-blur-md shadow-2xl shadow-slate-200/50 dark:shadow-black/50 group hover:border-medical-500 transition-colors"
           >
              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-medical-500/20 flex items-center justify-center text-medical-400">
+                <div className="w-10 h-10 rounded-full bg-medical-500/10 dark:bg-medical-500/20 flex items-center justify-center text-medical-600 dark:text-medical-400">
                     <CheckCircle size={20} />
                 </div>
                 <div>
-                    <h3 className="text-white font-bold">{t.hero.cards.reliable}</h3>
-                    <p className="text-xs text-slate-400">{t.hero.cards.uptime}</p>
+                    <h3 className="text-slate-900 dark:text-white font-bold">{t.hero.cards.reliable}</h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">{t.hero.cards.uptime}</p>
                 </div>
              </div>
           </motion.div>
