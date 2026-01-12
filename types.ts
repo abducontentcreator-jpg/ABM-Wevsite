@@ -94,6 +94,10 @@ export interface Translations {
       title: string;
       items: string[];
     };
+    receivingProcess: {
+      title: string;
+      items: string[];
+    };
     process: {
       manufacturers: { title: string; sub: string };
       distribution: { title: string; sub: string };

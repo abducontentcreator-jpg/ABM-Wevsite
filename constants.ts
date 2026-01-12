@@ -138,6 +138,19 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
           "Compliance with applicable pharmaceutical regulations"
         ]
       },
+      receivingProcess: {
+        title: "Product Receiving Process",
+        items: [
+          "New arrivals notification",
+          "Receive and verify documents",
+          "Conduct inspection on vehicle",
+          "Unload pharmaceutical products",
+          "Check quality against documents",
+          "Prepare receiving voucher",
+          "Issue voucher copy to driver/carrier",
+          "Store at appropriate place"
+        ]
+      },
       process: {
         manufacturers: { title: "Manufacturers", sub: "Quality sources" },
         distribution: { title: "ABM Distribution", sub: "Our warehouses" },
@@ -310,6 +323,19 @@ export const TRANSLATIONS: Record<'en' | 'am', Translations> = {
           "ሥነ-ምግባራዊ እና ሙያዊ የንግድ አሰራር",
           "ለጤና ተቋማት አስተማማኝ አቅርቦት",
           "ተፈጻሚነት ያላቸውን የመድሃኒት ደንቦች ማክበር"
+        ]
+      },
+      receivingProcess: {
+        title: "የምርት መቀበል ሂደት",
+        items: [
+          "አዲስ ምርት መድረስ",
+          "ሰነዶችን መረከብ እና ማረጋገጥ",
+          "ተሽከርካሪውን መፈተሽ",
+          "የመድሃኒት ምርቶችን ማራገፍ",
+          "ጥራትን ከሰነድ ጋር ማረጋገጥ",
+          "የረረከብ ደረሰኝ ማዘጋጀት",
+          "ለአሽከርካሪው የደረሰኝ ቅጂ መስጠት",
+          "በተገቢው ቦታ እና ሁኔታ ማከማቸት"
         ]
       },
       process: {

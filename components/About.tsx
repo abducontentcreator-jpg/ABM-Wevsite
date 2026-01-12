@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { Factory, Truck, Building2, Users, Check, Clock, HeadphonesIcon, Target, Eye, Activity, Shield, Award } from 'lucide-react';
+import { Factory, Truck, Building2, Users, Check, Clock, HeadphonesIcon, Activity, Shield, Award, ClipboardCheck, ArrowDown, FileText, PackageCheck, Warehouse } from 'lucide-react';
 
 export const About: React.FC = () => {
   const { t } = useLanguage();
@@ -31,6 +31,18 @@ export const About: React.FC = () => {
         icon: <HeadphonesIcon size={20} />
     }
   ];
+
+  // Icons for specific steps in the flowchart to make it more visual
+  const getStepIcon = (index: number) => {
+    switch(index) {
+        case 0: return <Truck size={18} />;
+        case 1: return <FileText size={18} />;
+        case 2: return <Activity size={18} />;
+        case 3: return <PackageCheck size={18} />;
+        case 7: return <Warehouse size={18} />;
+        default: return <Check size={18} />;
+    }
+  };
 
   return (
     <section id="about" className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-300">
@@ -137,6 +149,64 @@ export const About: React.FC = () => {
                         </div>
                     </motion.div>
                 ))}
+            </div>
+        </div>
+
+         {/* Product Receiving Workflow Flowchart */}
+         <div className="mb-24">
+             <div className="text-center mb-16">
+                <div className="inline-flex items-center justify-center p-3 bg-teal-50 dark:bg-teal-900/20 rounded-xl text-teal-600 dark:text-teal-400 mb-4">
+                    <ClipboardCheck size={32} />
+                </div>
+                <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t.about.receivingProcess.title}</h3>
+                <p className="text-slate-500 dark:text-slate-400">Strict standard operating procedures for safety and quality</p>
+            </div>
+
+            <div className="relative max-w-4xl mx-auto">
+                {/* Central Line (Desktop) / Left Line (Mobile) */}
+                <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500/20 via-teal-500 to-teal-500/20 md:-translate-x-1/2" />
+                
+                {t.about.receivingProcess.items.map((step, idx) => (
+                    <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ delay: idx * 0.1, duration: 0.5 }}
+                        className={`relative flex items-center mb-12 ${idx % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+                    >
+                        {/* Center/Line Dot */}
+                        <div className="absolute left-6 md:left-1/2 w-8 h-8 rounded-full bg-white dark:bg-slate-900 border-4 border-teal-500 flex items-center justify-center z-10 md:-translate-x-1/2 transform -translate-x-1/2">
+                            <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400">{idx + 1}</span>
+                        </div>
+
+                        {/* Spacer for Desktop Layout */}
+                        <div className="hidden md:block w-1/2" />
+                        
+                        {/* Content Card */}
+                        <div className={`flex-1 pl-16 md:pl-0 ${idx % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                            <div className="p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-md hover:shadow-lg hover:border-teal-500/30 transition-all relative group">
+                                {/* Connector Line (Desktop Only) */}
+                                <div className={`hidden md:block absolute top-1/2 w-12 h-0.5 bg-teal-500/30 -translate-y-1/2 ${idx % 2 === 0 ? '-right-12' : '-left-12'}`} />
+                                
+                                <div className="flex items-start gap-4">
+                                    <div className="p-2 rounded-lg bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 shrink-0 group-hover:scale-110 transition-transform">
+                                        {getStepIcon(idx)}
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-slate-800 dark:text-slate-100 mb-1 text-lg">Step {idx + 1}</h4>
+                                        <p className="text-slate-600 dark:text-slate-400 text-sm font-medium">{step}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                ))}
+
+                {/* End Icon */}
+                <div className="absolute bottom-[-20px] left-6 md:left-1/2 transform -translate-x-1/2 text-teal-500 bg-white dark:bg-slate-900 p-1 rounded-full border border-teal-500 z-10">
+                    <ArrowDown size={20} />
+                </div>
             </div>
         </div>
 
